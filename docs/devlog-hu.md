@@ -1,13 +1,17 @@
-## 2026-06-15
 
-Összeállt a Huggy Gombóc V0.1 első alkatrészkosara.
+## 2026-06-23
 
-Fő cél:
-- ESP32 alapú vezérlés
-- TTP223 érintésérzékelés
-- WS2812B LED heartbeat
-- passzív buzzer hangreakció
-- SG90/MG90S szervómozgás
-- későbbi stabil táp LM2596 buck converterrel
+Megrendeltem a Huggy Gombóc V0.1 első alkatrészeit.
 
-Első tesztek USB-ről mennek, az akkumulátoros tápellátást később robotika kabinetben ellenőrzöm.
+Rendelt fő alkatrészek:
+- LM2596 buck converter
+- WS2812B 12 LED ring
+- KY-006 passive buzzer
+- TTP223 touch sensor
+- MG90S 180° servo
+
+A V0.1 célja továbbra is:
+touch → LED heartbeat → buzzer → small servo movement
+
+Következő lépés:
+a meglévő ESP8266 robotkit tanulmányozása és a gyári kódok megértése.
