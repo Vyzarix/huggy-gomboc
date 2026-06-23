@@ -4,7 +4,7 @@
 
 The whole project is based on a core robotics principle:
 
-INPUT → DECISION → OUTPUT
+# INPUT → DECISION → OUTPUT
 
 Input means the robot senses something.
 
@@ -16,9 +16,9 @@ distance
 sound
 camera image
 
-Decision means the robot chooses what to do.
+# Decision means the robot chooses what to do.
 
-Examples:
+# Examples:
 
 idle
 touched
@@ -26,9 +26,9 @@ shy
 happy
 comfort mode
 
-Output means the robot reacts.
+# Output means the robot reacts.
 
-Examples:
+# Examples:
 
 LED heartbeat
 buzzer sound
@@ -37,9 +37,9 @@ motor movement
 voice
 ESP32
 
-The ESP32 will be the first main controller for Huggy’s physical reactions.
+# The ESP8266 will be the first main controller for Huggy’s physical reactions.
 
-What I need to learn:
+# What I need to learn:
 
 digital input
 digital output
@@ -51,36 +51,37 @@ controlling servo
 using Wi-Fi later
 Touch sensor
 
-The TTP223 touch sensor works as a simple capacitive touch input.
+# The TTP223 touch sensor works as a simple capacitive touch input.
 
-Basic idea:
+# Basic idea:
 
 VCC → power
 GND → ground
-OUT → signal to ESP32
+OUT → signal to ESP8266
 
 If touched, OUT changes state.
 
 This can become Huggy’s first “feeling” input.
 
-LED heartbeat
+# LED heartbeat
 
 The LED heartbeat is not just decoration.
 It gives Huggy emotional presence.
 
-First version:
+# First version:
 
 slow pulsing light when idle
 faster pulse when touched
 different colors for different states
-Buzzer
+
+# Buzzer
 
 The passive buzzer can make simple tones.
 
 It is not real speech.
 It is only an early sound reaction.
 
-Later, Huggy will need:
+# Later, Huggy will need:
 
 speaker
 TTS
@@ -89,14 +90,7 @@ STT
 AI conversation layer
 Servo
 
-A servo creates physical movement.
-
-Important:
-
-180° servo = position control
-360° servo = continuous rotation, more like a motor
-
-For Huggy’s head or arms, 180° servos are needed.
+# A servo creates physical movement.
 
 Power safety
 
@@ -107,13 +101,12 @@ Battery tests should only come later.
 Important rules:
 
 do not short 18650 batteries
-do not power servos directly from ESP32 pins
+do not power servos directly from ESP8266 pins
 use buck converter for stable voltage
 use common GND
 ask for help in the robotics lab before battery + servo tests
-First learning goal
 
-Before building the full robot, I need to understand:
+# Before building the full robot, I need to understand:
 
 how to blink an LED
 how to read a touch sensor
