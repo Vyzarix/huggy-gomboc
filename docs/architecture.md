@@ -1,4 +1,4 @@
-#Huggy Gombóc Architecture#
+##Huggy Gombóc Architecture##
 
 The robot receives information from sensors, makes a simple decision, then reacts with light, sound or movement.
 
