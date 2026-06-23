@@ -4,20 +4,16 @@ Huggy Gomboc is a small emotional companion robot prototype.
 
 The goal is to build a little robot companion that can react to touch, presence and later voice with light, sound, movement and simple personality states.
 
-## Magyar leírás
+The project is not just a simple robot car or Arduino experiment in the long run, but a multi-year engineering learning project:
 
-A Huggy Gombóc / Ölelő Gombóc célja egy kicsi companion robot építése, amely érintésre, közelségre és később hangra reagál fénnyel, mozgással, hanggal és egyszerű személyiségállapotokkal.
-
-A projekt hosszú távon nem csak egy egyszerű robotautó vagy Arduino-kísérlet, hanem egy többéves mérnöki tanulási projekt:
-
-* robotika
-* mikrokontrolleres vezérlés
-* szenzorok
-* LED-effektek
-* szervómozgás
-* energiaellátás
-* később AI, hang, memória és személyiség
-* még később humanoid test és ember-robot interakció
+* robotics
+* microcontroller control
+* sensors
+* LED effects
+* servo motion
+* power supply
+* later AI, voice, memory and personality
+* even later humanoid body and human-robot interaction
 
 ## Core Principle
 
@@ -59,19 +55,9 @@ touch → LED heartbeat → buzzer sound → small servo movement
 
 This will be the first moment where Huggy physically reacts to the user.
 
-## Planned Development Roadmap
-
-### Huggy V0.1 — First Life Sign
-
-Goal:
-
-```text
-touch → LED heartbeat → buzzer → small servo movement
-```
-
 Main parts:
 
-* ESP8266 from the existing AliExpress robot kit
+* ESP8266 from an already existing AliExpress robot kit
 * TTP223 capacitive touch sensor
 * WS2812B 12 LED ring
 * KY-006 passive buzzer
@@ -187,7 +173,7 @@ Goal:
 
 Huggy should have an AI conversation layer.
 
-The AI personality may be based on the earlier Solana prototype.
+The AI personality may be based on my earlier Solana prototype.
 
 Possible features:
 
@@ -258,7 +244,7 @@ Move toward a more humanoid companion body.
 
 This may include experiments with:
 
-* the school robotics lab humanoid frame
+* my school robotics lab humanoid frame
 * multiple servos
 * servo controller
 * stronger power system
@@ -317,18 +303,8 @@ The project should grow step by step.
 
 First reaction.
 Then movement.
-Then voice.
-Then memory.
-Then personality.
-Then a better body.
-Then advanced robotics.
-
-## Current Status
-
-Current focus:
-
-* ordering V0.1 parts
-* studying the existing ESP8266 robot kit
-* understanding factory example codes
-* documenting the project on GitHub
-* preparing the first touch → LED → buzzer → servo test
+ voice.
+ memory.
+ personality.
+ a better body.
+ advanced robotics.
