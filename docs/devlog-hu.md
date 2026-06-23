@@ -1,6 +1,6 @@
 ## 2026-06-13
 
-A sok hónapnyi tervezés, ígéret után végre létrehoztam a GITHUB profilomat, a Huggy projektem dokumentálásának platformját.
+A sok hónapnyi tervezés, ígéret után végre létrehoztam a GitHub profilomat, a Huggy projektem dokumentálásának platformját.
 
 ## 2026-06-23
 
