@@ -6,8 +6,6 @@ Huggy Gomboc is a small emotional companion robot prototype.
 
 The first version will be a simple reactive system:
 
-INPUT → DECISION → OUTPUT
-
 Planned reactions:
 - touch or button input
 - LED heartbeat effect
