@@ -1,15 +1,15 @@
-  Huggy Gombóc Architecture
+## Huggy Gombóc Architecture
 
-The robot receives information from sensors, makes a simple decision, then reacts with light, sound or movement.
+# The robot receives information from sensors, makes a simple decision, then reacts with light, sound or movement.
 
-  V0.1 system
+## V0.1 system
 
 The first version is not a full humanoid robot yet.
 The goal is to create the first emotional reaction system.
 
-  Inputs:
+## Inputs:
 
-  Planned input sources:
+## Planned input sources:
 
 TTP223 capacitive touch sensor
 button input
@@ -22,7 +22,7 @@ At first, the decision layer will run on an ESP8266.
 
 The ESP8266 will read sensor values and choose a simple state.
 
-  Planned early states:
+## Planned early states:
 
 IDLE
 TOUCHED
@@ -38,9 +38,9 @@ LED heartbeat becomes faster
 buzzer makes a small sound
 servo moves slightly
 
-  Outputs
+## Outputs
 
-  Planned output devices:
+## Planned output devices:
 
 WS2812B LED ring for heartbeat and emotional light
 passive buzzer for simple sound reaction
@@ -49,9 +49,9 @@ later: speaker for voice
 later: DC motors for rolling movement
 later: humanoid servo movements
 
-  V0.1 goal
+## V0.1 goal
 
-The first real goal:
+## The first real goal:
 
 touch → LED heartbeat → buzzer sound → small servo movement
 
@@ -69,7 +69,7 @@ The physical robot can also receive commands from the AI layer:
 
 AI response → emotion command → ESP8266 → LED / servo / motor reaction
 
-  Example future command:
+Example future command:
 
 {
 "emotion": "comfort",
@@ -78,7 +78,7 @@ AI response → emotion command → ESP8266 → LED / servo / motor reaction
 "voice": "soft"
 }
 
-  Long-term system vision
+## Long-term system vision
 
 Huggy Gombóc may later become a small emotional companion robot with:
 
