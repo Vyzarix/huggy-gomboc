@@ -1,16 +1,14 @@
-Huggy Gombóc Learning Notes
+## Huggy Gombóc Learning Notes
 
-This file contains what I learn while building Huggy Gombóc.
+# This file contains what I learn while building Huggy Gombóc.
 
-Core robotics principle
-
-The whole project is based on:
+The whole project is based on a core robotics principle:
 
 INPUT → DECISION → OUTPUT
 
 Input means the robot senses something.
 
-Examples:
+# Examples:
 
 touch
 button press
