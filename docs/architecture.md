@@ -9,7 +9,7 @@ The goal is to create the first emotional reaction system.
 
 ## Inputs:
 
-## Planned input sources:
+# Planned input sources:
 
 TTP223 capacitive touch sensor
 button input
