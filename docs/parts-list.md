@@ -1,154 +1,192 @@
-**Huggy Gombóc Parts List**
+Huggy Gombóc Parts List
 
-This file contains the first planned parts for Huggy Gombóc V0.1.
+This file contains the planned and existing parts for Huggy Gombóc V0.1.
 
-Main controller
-ESP32 development board with expansion board
+V0.1 Goal
 
-Purpose:
+The first working behavior should be:
 
-reads sensors
-controls LED ring
-controls buzzer
-sends servo signals
-later can communicate over Wi-Fi / Bluetooth
+touch → LED heartbeat → buzzer sound → small servo movement
+Ordered / Planned V0.1 Parts
+LM2596 buck converter
 
-Reason:
+Quantity:
 
-ESP32 has more pins and more future potential than ESP8266.
-
-Touch sensing
-TTP223 capacitive touch sensor
+3 pieces
 
 Purpose:
 
-detects touch
-can be used for head, chest, arm or body touch zones
+step down battery voltage to stable 5V or 6V
+later power servos, LEDs or electronics from batteries
+create separate power branches later
 
-Planned use:
+Possible future use:
 
-chest touch → heartbeat reaction
-head touch → shy reaction
-arm touch → small movement reaction
-Light
-WS2812B RGB LED ring
+battery → buck converter → logic / sensors / LED
+battery → buck converter → servos
+battery → buck converter → motors
+
+Important:
+
+First tests will run from USB.
+Battery tests will come later with help from others.
+
+WS2812B 12 LED ring
+
+Quantity:
+
+1 piece
 
 Purpose:
 
 heartbeat effect
 emotional light feedback
-color-based state display
+visual robot state
 
-Examples:
+Possible states:
 
 slow red pulse → calm heartbeat
-faster pulse → touched / excited
-soft blue/white → sleepy / idle
-red/pink → shy reaction
-Sound
+faster red pulse → touched / excited
+blue or white dim light → idle / sleepy
+pink/red → shy reaction
+
 KY-006 passive buzzer
+
+Quantity:
+
+1 piece
 
 Purpose:
 
 simple sound feedback
-small beeps
+short beep
 simple tones
-possible heartbeat-like sound pattern
+heartbeat-like rhythm
+early emotional sound reaction
 
 Note:
 
 This is not for real speech.
-Real voice will require a speaker and TTS later.
+Real voice will require a speaker, TTS and a bigger controller later.
 
-Movement
-SG90 servo
+TTP223 capacitive touch sensor
+
+Quantity:
+
+10 pieces
 
 Purpose:
 
-small test movements
-head or tiny arm movement
+touch input
+first “feeling” input for Huggy
+possible future touch zones
+
+Possible zones:
+
+chest
+head
+left arm
+right arm
+back
+
+Planned V0.1 use:
+
+touch detected → heartbeat LED + buzzer + servo movement
+
+MG90S 180° servo
+
+Quantity:
+
+3 pieces
+
+Purpose:
+
+small movement
+head movement
+tiny arm movement
+shy reaction
 learning servo control
 
-Important:
+Already available from my AliExpress ESP8266 robot kit:
 
-For Huggy’s head or arms, 180° servo is needed, not 360° continuous rotation.
-
-MG90S servo
-
-Purpose:
-
-stronger movement than SG90
-possible arm or head movement
-better for later prototypes
-Servo controller
-PCA9685 16-channel servo driver
-
-Purpose:
-
-controls multiple servos
-useful when Huggy gets more moving parts
-useful for later humanoid experiments
-
-Architecture:
-
-ESP32 → PCA9685 → servos
-
-Power
-LM2596 buck converter
-
-Purpose:
-
-steps down battery voltage to stable 5V or 6V
-later used for servos and electronics
-
-Important:
-
-First tests will run from USB.
-Battery power will be tested later with help in the robotics lab.
-
-Prototyping
-MB102 breadboard
-
-Purpose:
-
-test circuits without soldering
-connect ESP32, sensors, LED, buzzer and small components
-Electronics starter kit
-
-Purpose:
-
-LEDs
-resistors
-buttons
-capacitors
-basic components for learning and testing
-Existing parts at home
-
-Already available:
-
-AliExpress ESP8266 robot car kit
+ESP8266 controller
 DC motors
 wheels
 motor driver
 ultrasonic distance sensor
+SG90 servo
 small breadboard
 jumper wires
+robot chassis
+existing example programs:
+motor control
+obstacle avoidance
+distance-based behavior
+Wi-Fi control
+
+Available power-related parts:
+
 2× 18650 batteries
 18650 battery holder
-robot chassis
-existing example programs for motor control, obstacle avoidance and Wi-Fi control
-V0.1 minimum build
+Optional / Later Parts
 
-Minimum required working system:
+PCA9685 servo controller
+
+For V0.1, it is not required.
+
+Purpose later:
+
+microcontroller → PCA9685 → multiple servos
+
+Useful when Huggy has more moving parts.
 
 ESP32
+
+Status:
+
+Not ordered yet.
+
+Reason:
+
+The existing ESP8266 is enough for the first V0.1 tests.
+
+ESP32 may be useful later because it has:
+
+more GPIO pins
+more future flexibility
+Wi-Fi
+Bluetooth/BLE
+Raspberry Pi
+
+Status:
+
+Future part.
+
+Purpose later:
+
+AI / Solana backend
+memory
+microphone
+speaker
+TTS
+STT
+camera
+higher-level behavior
+
+Important:
+
+A Raspberry Pi does not fully replace the microcontroller.
+The likely future system is:
+
+Raspberry Pi = AI / voice / memory
+ESP8266 or ESP32 = sensors / LEDs / servos / motors
+V0.1 Minimum Build
+
+Minimum working system:
+
+ESP8266
 TTP223 touch sensor
 WS2812B LED ring
 KY-006 passive buzzer
-breadboard
-jumper wires
+MG90S or SG90 servo
 USB power
-
-Goal:
-
-touch → heartbeat LED → sound reaction
