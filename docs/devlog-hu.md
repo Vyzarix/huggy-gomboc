@@ -1,20 +1,21 @@
 ## 2026-06-13
 
-A sok hónapnyi tervezés, ígéret után végre létrehoztam a GitHub profilomat, a Huggy projektem dokumentálásának platformját.
+After several months of planning, I finally created my GitHub profile and a repository to document the development of my Huggy Gomboc project.
 
 ## 2026-06-23
 
-Megrendeltem a Huggy Gombóc V0.1 első alkatrészeit.
+I ordered the first components for Huggy Gomboc V0.1.
 
-Rendelt fő alkatrészek:
+Main components:
+
 - LM2596 buck converter
 - WS2812B 12 LED ring
 - KY-006 passive buzzer
-- TTP223 touch sensor
+- TTP223 capacitive touch sensor
 - MG90S 180° servo
 
-A V0.1 célja továbbra is:
+The main goal of V0.1 is to build the first simple physical reaction system:
+
 touch → LED heartbeat → buzzer → small servo movement
 
-Következő lépés:
-a meglévő ESP8266 robotkit tanulmányozása és a gyári kódok megértése.
+The next step is to study my existing ESP8266 robot kit and understand its factory example codes, especially motor control, sensor reading and basic movement.
