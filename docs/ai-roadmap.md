@@ -82,6 +82,7 @@ Main goals:
 ## V1.0 – Physical Huggy Prototype
 
 Huggy becomes a basic physical companion robot.
+This version connects the AI layer to the first physical reaction system.
 
 Main goals:
 
