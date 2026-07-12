@@ -4,7 +4,7 @@ After several months of planning, I finally created my GitHub profile and a repo
 
 ## 2026-06-23
 
-I ordered the first components for Huggy Gomboc V0.1.
+I planned to order the first components for Huggy Gomboc V0.1.
 
 Main components:
 
