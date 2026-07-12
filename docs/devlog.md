@@ -24,4 +24,4 @@ The next step is to study my existing ESP8266 robot kit and understand its facto
 
 ## First working terminal prototype launch: 2026-06-25, early morning
 
-## Current refined memory/personality phase: 2026-07-12
+## Current refined memory / personality phase: 2026-07-12
