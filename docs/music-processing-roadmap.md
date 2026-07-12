@@ -9,7 +9,7 @@ Main goals:
 * record evening piano practice as an audio file;
 * save the date and time of the practice;
 * store what piece was played;
-* store what Kristóf felt during the practice;
+* store what the user felt during the practice;
 * connect music practice to Huggy's journal.
 
 Example:
