@@ -31,7 +31,7 @@ Main goals:
 * refine Huggy's speaking style;
 * add an evening love / longing / emotional reflection mode;
 * reduce overly technical or task-like responses during emotional conversations;
-* add specific long-term memories, such as specific emotional memories from real-life experiences;
+* support selected private long-term memories stored locally;
 * improve Huggy's ability to listen, ask gentle questions, and stay present.
 
 ## V0.4 – Improved Memory System and Conversation Recall
