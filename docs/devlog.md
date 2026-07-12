@@ -19,3 +19,9 @@ The main goal of V0.1 is to build the first simple physical reaction system:
 touch → LED heartbeat → buzzer → small servo movement
 
 The next step is to study my existing ESP8266 robot kit and understand its factory example codes, especially motor control, sensor reading and basic movement.
+
+## Huggy AI concept / direction started: 2026-06-24
+
+## First working terminal prototype launch: 2026-06-25, early morning
+
+## Current refined memory/personality phase: 2026-07-12
