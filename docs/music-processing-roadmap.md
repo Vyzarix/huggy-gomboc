@@ -18,7 +18,7 @@ Example:
 2026-07-12
 Piece: improvised evening piano
 Feeling: longing, calm sadness, hope
-Note: played softly after thinking about the Mexican girl
+Note: played softly after thinking deeply
 ```
 
 ## Music V0.2 – Basic Audio Feature Detection
