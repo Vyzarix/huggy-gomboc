@@ -48,3 +48,26 @@ The first prototype could:
 This was the first real software milestone of Huggy AI.
 
 The project moved from an idea into a working local prototype.
+
+## 2026-07-12 / 2026-07-13 – Personality and Response Style Refinement
+
+During July 12–13, 2026, I worked on refining Huggy AI's personality, emotional response style, and conversation behavior.
+
+The main goal was to make Huggy feel less like a generic assistant and more like a calm, personal companion layer.
+
+Main improvements:
+
+* refined `personality.md`;
+* added stronger rules for emotional conversations;
+* improved the evening love / longing / missing someone mode;
+* added a deeper comfort mode for moments of emotional pain;
+* adjusted Huggy to ask more gentle questions instead of giving immediate advice;
+* reduced automatic journaling, piano suggestions, and task-like responses;
+* improved Huggy's ability to listen, stay present, and respond warmly;
+* added guidance for reminding the user about long-term dreams, projects, music, robotics, and the life being built.
+
+This phase helped Huggy become more emotionally accurate, more personal, and closer to the intended companion AI vision.
+
+Current state:
+
+`Huggy AI V0.3.1 – Deep Comfort and Response Style Refinement`
