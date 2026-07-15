@@ -18,7 +18,7 @@ touch → LED heartbeat → buzzer sound → small servo movement
 
 ## Planned V0.1 Order
 
-### LM2596 Buck Converter
+## LM2596 Buck Converter
 
 **Quantity:** 3 pieces
 
@@ -41,7 +41,7 @@ touch → LED heartbeat → buzzer sound → small servo movement
 
 ---
 
-### WS2812B 12 LED Ring
+## WS2812B 12 LED Ring
 
 **Quantity:** 1 piece
 
@@ -65,7 +65,7 @@ touch → LED heartbeat → buzzer sound → small servo movement
 
 ---
 
-### KY-006 Passive Buzzer
+## KY-006 Passive Buzzer
 
 **Quantity:** 1 piece
 
@@ -86,7 +86,7 @@ touch → LED heartbeat → buzzer sound → small servo movement
 
 ---
 
-### TTP223 Capacitive Touch Sensor
+## TTP223 Capacitive Touch Sensor
 
 **Quantity:** 10 pieces
 
@@ -106,7 +106,7 @@ touch → LED heartbeat → buzzer sound → small servo movement
 
 ---
 
-### MG90S 180° Servo
+## MG90S 180° Servo
 
 **Quantity:** 3 pieces
 
@@ -125,7 +125,7 @@ touch → LED heartbeat → buzzer sound → small servo movement
 
 ---
 
-### Planned Electronics Starter Kit
+## Planned Electronics Starter Kit
 
 **Possible included parts:**
 - 400-point breadboard
@@ -146,7 +146,7 @@ touch → LED heartbeat → buzzer sound → small servo movement
 
 ## Existing Parts
 
-### Existing ESP8266 Robot Kit
+## Existing ESP8266 Robot Kit
 
 **Available parts:**
 - ESP8266 controller
@@ -169,7 +169,7 @@ touch → LED heartbeat → buzzer sound → small servo movement
 
 ---
 
-### Existing Power Parts
+## Existing Power Parts
 
 **Available:**
 - 2× 18650 cells
@@ -186,7 +186,7 @@ touch → LED heartbeat → buzzer sound → small servo movement
 
 ## V0.1 Controller
 
-### ESP8266
+## ESP8266
 
 **Status:** Already available
 
