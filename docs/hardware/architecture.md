@@ -1,223 +1,105 @@
-# Huggy Gomboc Hardware Architecture
+# Huggy Gomboc — Hardware Architecture
 
-This document describes the planned hardware architecture of Huggy Gomboc.
+## Overview
 
-The AI, memory and conversation software are documented separately.
-This file focuses on sensors, controllers, power, displays, sound and physical movement.
+This document describes the planned hardware architecture of the Huggy Gomboc project. It focuses on the physical systems (sensors, controllers, power, displays, sound, and movement) and the staged approach for development from simple reactions to advanced humanoid movement.
 
-## Core Hardware Principle
+## Core Principle
 
-Huggy's physical system follows a simple robotics structure:
+The physical system follows a simple robotics loop:
 
-```text
 INPUT → STATE / COMMAND → OUTPUT
 
 Examples:
 
-touch → SAFE state → eyes close + slow heartbeat
-touch → SHY state → pink heartbeat + small head turn
-distance detected → ATTENTION state → face looks toward the user
-AI command → COMFORT state → arms open + soft voice
-Controller Layers
+- touch → SAFE state → eyes close + slow heartbeat
+- touch → SHY state → pink heartbeat + small head turn
+- distance detected → ATTENTION state → face looks toward the user
+- AI command → COMFORT state → arms open + soft voice
 
-The long-term system will use two different controller layers.
+## Controller Layers
 
-Low-Level Physical Controller
+We separate control into two layers:
 
-Possible controllers:
+1. Low-level physical controller
+   - Candidates: ESP8266 (prototype), ESP32 / ESP32-S3 (later)
+   - Responsibilities:
+     - Read touch and other low-level sensors
+     - Control LED heartbeat, display face, servos/motors
+     - Run safe predefined movement sequences
+     - React quickly even if the AI system is unavailable
 
-ESP8266 for the first prototype
-ESP32 or ESP32-S3 for later versions
+2. High-level computer
+   - Candidates: laptop (development), Raspberry Pi (standalone), Jetson (advanced vision)
+   - Responsibilities:
+     - Microphone and speaker handling
+     - Speech-to-text and text-to-speech
+     - AI conversation and long-term memory
+     - Camera processing and high-level behavior planning
+   - The high-level computer sends safe, high-level commands (e.g. STATE=COMFORT, FACE=SAFE). The microcontroller maps these to predefined, safe physical reactions.
 
-Responsibilities:
+## Development Stages
 
-read touch sensors
-control the LED heartbeat
-control the display face
-control servos and motors
-run safe predefined movement sequences
-react quickly even when the AI system is unavailable
-High-Level Computer
+### V0.1 — First Life Sign (Minimal physical reaction)
 
-Possible systems:
+Goal: Produce a stable, repeatable physical reaction.
 
-laptop during development
-Raspberry Pi in a standalone version
-Jetson later if advanced local vision is required
+Inputs:
+- TTP223 capacitive touch sensor (or a push button)
 
-Responsibilities:
+Controller:
+- ESP8266 (from a starter kit for first prototype)
+- The ESP8266 will read the touch sensor, control a WS2812B LED ring, drive a passive buzzer, and send a control signal to one servo.
 
-microphone and speaker
-speech-to-text
-text-to-speech
-AI conversation
-long-term memory
-camera processing
-high-level behavior commands
+Outputs:
+- WS2812B LED ring (12 LEDs)
+- KY-006 passive buzzer
+- One MG90S/SG90 servo
 
-The high-level computer should not directly create uncontrolled servo movements.
+States: IDLE, TOUCHED (possible later: SHY, HAPPY, SAFE, SLEEPY, COMFORT)
 
-Instead, it should send safe commands such as:
+Definition of Done:
+- Reliable touch detection
+- Non-blocking LED heartbeat
+- Controlled buzzer sound
+- Safe servo movement
+- Full reaction repeats and returns to IDLE
+- Wiring and program documented in the repository
 
-STATE=COMFORT
-FACE=SAFE
-MOTION=OPEN_ARMS
-HEARTBEAT=SLOW
+### V0.2 — Emotional State Machine
 
-The microcontroller will convert these commands into predefined physical reactions.
+Goal: Implement multiple consistent physical states without AI.
 
-V0.1 — First Life Sign
-Goal
+Possible states: IDLE, TOUCHED, SHY, HAPPY, SAFE, SLEEPY, COMFORT
 
-The first version is a minimal physical reaction system.
+Improvements to implement:
+- Non-blocking timing and cleaner functions
+- Multiple touch zones and smoother servo movement
+- More expressive LED patterns and stable wiring
+- Calibrated reaction durations
 
-touch → LED heartbeat → buzzer sound → small servo movement
+Possible touch zones: head, chest, left arm, right arm, back
 
-The purpose of V0.1 is to create the first stable physical reaction of Huggy.
+### V0.3 — Display Face Prototype
 
-It is not intended to be a complete robot body.
+Goal: Add a digital face with animated eyes and expressions.
 
-Inputs
-TTP223 capacitive touch sensor
-optional push button from the electronics starter kit
-Controller
-existing ESP8266 from the AliExpress robot kit
+Hardware candidates:
+- ESP32-S3
+- 2–3.5" IPS/TFT display
+- Black transparent or glossy face panel
+- Custom 3D-printed head enclosure
 
-The ESP8266 will:
+Animations to prototype: open/blink/closed eyes, happy/shy/look left/right, listening/thinking/sleepy states.
+Prototype animations on a computer before committing to a display.
 
-read one touch sensor
-control the WS2812B LED ring
-control the passive buzzer
-send a control signal to one servo
-run the first simple state logic
-Outputs
-WS2812B 12 LED ring
-KY-006 passive buzzer
-one MG90S or SG90 servo
-First States
-IDLE
-TOUCHED
+### V0.4 — Laptop-to-Robot Bridge
 
-Possible later V0.1 states:
+Goal: Connect the prototype to the AI running on a laptop.
 
-SHY
-HAPPY
-SAFE
-SLEEPY
-COMFORT
-Example Logic
-if touch is detected:
-    change state to TOUCHED
-    increase heartbeat speed
-    play a short sound
-    move the servo slowly
-else:
-    stay in IDLE
-    display a slow heartbeat
-V0.1 Definition of Done
+Possible communications: USB serial, Wi‑Fi, local network messages.
 
-V0.1 is complete when:
-
-all components work separately
-touch detection is reliable
-the LED heartbeat runs without blocking the whole program
-the buzzer can create a short controlled sound
-one servo moves safely
-the full reaction works repeatedly
-Huggy returns to IDLE after the reaction
-the wiring is documented
-the program is stored in the repository
-V0.2 — Emotional State Machine
-Goal
-
-Create multiple consistent physical states without AI.
-
-Possible states:
-
-IDLE
-TOUCHED
-SHY
-HAPPY
-SAFE
-SLEEPY
-COMFORT
-
-Possible reactions:
-
-head touch
-→ SAFE
-→ slow warm heartbeat
-→ eyes closed later
-→ small movement toward the hand
-unexpected touch
-→ SHY
-→ faster pink heartbeat
-→ small turn away
-→ return to IDLE
-
-Planned improvements:
-
-cleaner functions
-non-blocking timing
-multiple touch zones
-smoother servo movement
-more expressive LED patterns
-more stable wiring
-calibrated reaction durations
-
-Possible touch zones:
-
-head
-chest
-left arm
-right arm
-back
-V0.3 — Display Face Prototype
-Goal
-
-Add a digital face with animated eyes.
-
-The face should be able to display:
-
-open eyes
-blinking
-closed safe eyes
-happy eyes
-shy eyes
-looking left and right
-listening state
-thinking state
-sleepy state
-
-Possible future hardware:
-
-ESP32-S3
-approximately 2–3.5 inch IPS or TFT display
-black transparent or glossy face panel
-custom 3D-printed head enclosure
-
-Possible reaction:
-
-head touch
-→ SAFE state
-→ eyes slowly close
-→ heartbeat slows down
-→ head moves slightly toward the hand
-
-The face animations should first be prototyped on a computer before buying the final display.
-
-V0.4 — Laptop-to-Robot Bridge
-Goal
-
-Connect the physical prototype to the developing Huggy AI running on a laptop.
-
-Possible communication methods:
-
-USB serial
-Wi-Fi
-local network messages
-
-Example command:
+Example command (JSON):
 
 {
   "state": "comfort",
@@ -226,214 +108,100 @@ Example command:
   "motion": "small_hug"
 }
 
-The ESP8266 or ESP32 will receive the command and execute a safe predefined reaction.
+The microcontroller executes a safe predefined reaction when receiving such commands.
 
-This stage proves that the AI and the physical robot can work together before purchasing a Raspberry Pi.
+### V1 — Standalone Desktop Companion
 
-V1 — Standalone Desktop Companion
-Goal
-
-Create the first self-contained companion version of Huggy.
+Goal: Build the first self-contained companion version.
 
 Possible hardware:
+- ESP32-S3 (physical controller)
+- Raspberry Pi (high-level computer)
+- Digital face display, microphone, speaker, amplifier
+- Multiple touch zones, LED heartbeat, small arms, stable enclosure
 
-ESP32-S3 physical controller
-Raspberry Pi high-level computer
-digital face display
-microphone
-speaker
-audio amplifier
-head movement
-multiple touch zones
-LED heartbeat
-small arms
-stable enclosure
-
-Possible behaviors:
-
-blink naturally
-close the eyes when the head is touched
-listen and answer
-remember selected information
-move the head
-open the arms
-react with light, face, sound and motion together
+Behaviors:
+- Natural blinking, touch response, listen and answer, remember information, coordinated light/face/sound/motion reactions
 
 Walking is not required for this version.
 
-V2 — Rolling Companion Base
-Goal
+### V2 — Rolling Companion Base
 
-Allow Huggy to move safely without requiring bipedal walking.
+Goal: Allow safe movement with wheels rather than bipedal walking.
 
-Possible reusable parts from the existing robot kit:
+Possible parts: DC motors, motor driver, wheels, chassis, ultrasonic or ToF sensors, wheel encoders, bumpers, camera.
 
-DC motors
-motor driver
-wheels
-chassis components
-ultrasonic distance sensor
+Behaviors:
+- Detect user → approach slowly → stop at safe distance → look toward user → open arms
 
-Possible later sensors:
+Develop the rolling base before attempting humanoid walking.
 
-ToF distance sensors
-wheel encoders
-camera
-bumper sensors
+### V3 — Humanoid Upper Body
 
-Possible behaviors:
+Goal: Create a more expressive humanoid upper body (moving head, shoulders, elbows, small hands, torso control, hugging motion).
 
-detect user
-→ approach slowly
-→ stop at a safe distance
-→ look toward the user
-→ open arms
+Before choosing servos:
+- Create a CAD model, determine arm lengths and mass, calculate required torque, define mechanical limits, and design safe movement sequences.
 
-The rolling base should be developed before attempting humanoid walking.
+### V4 — Advanced Humanoid Movement
 
-V3 — Humanoid Upper Body
-Goal
+Goal: Research standing, balance and walking (hip/knee/ankle joints, IMU, COM estimation, motion planning, ROS2, camera-based perception).
+This is a long-term research stage; Huggy can still be useful and expressive long before walking is completed.
 
-Create a more expressive humanoid body.
+## Inputs (examples)
 
-Possible features:
+- Capacitive touch, buttons, ultrasonic/ToF distance, microphone, camera, IMU, temperature, pressure/contact sensors, wheel encoders
 
-moving head
-two shoulders
-two elbows
-small hands
-torso
-hugging motion
-body posture
-stronger or smarter servos
-rigid internal frame
-3D-printed outer shell
+## Outputs (examples)
 
-Before choosing final servos:
+- LED heartbeat, passive buzzer, digital face, speaker/voice, head/arm movement, wheel motors, body posture and humanoid movement
 
-create a CAD model
-determine arm lengths
-estimate component mass
-calculate required torque
-define mechanical limits
-design safe movement sequences
-V4 — Advanced Humanoid Movement
-Goal
+## Power Architecture
 
-Research standing, balance and eventually walking.
+Phase A — Logic tests:
+- USB → ESP8266 (low-brightness LED ring)
+- Never power motors/servos from ESP GPIO or 3.3V pins
 
-Possible requirements:
+Phase B — One servo test:
+- USB → ESP8266
+- Separate 4×AA supply → servo
+- Common ground between ESP and servo supply
 
-hip, knee and ankle joints
-IMU
-center-of-mass estimation
-stable feet
-fall detection
-motion planning
-coordinated servo control
-ROS 2
-camera-based perception
-extensive testing
+Phase C — Battery prototype:
+- Battery pack branching into regulated lines for controller/sensors/display, servos, and motors
+- Use verified battery packs, correct chargers, protection/BMS, fuses, main switch, and measure converters before connecting
+- Keep logic power isolated from servo/motor noise
+- Do not test unknown batteries without supervision
 
-This is a long-term research stage.
+Note: Existing 18650 cells must be verified before use (condition, configuration, protection).
 
-Huggy can become a useful and emotionally expressive companion long before walking is completed.
+## Mechanical & Environmental Considerations
 
-Input Layer
+- Define enclosure mounting points, connector accessibility, and cable routing
+- Specify operating temperature and humidity ranges and select rated components
+- Consider EMI/EMC shielding and grounding strategies
 
-Current and future inputs may include:
+## PCB & Layout Guidelines
 
-capacitive touch
-buttons
-ultrasonic distance
-ToF distance
-microphone
-camera
-IMU
-temperature sensing
-pressure or contact sensors
-wheel encoders
-Output Layer
+- Separate analog and digital grounds and join at a single point if needed
+- Place decoupling capacitors close to power pins
+- Route high-speed signals with controlled impedance and avoid long parallel traces for sensitive signals
+- Place connectors and test points for manufacturing and debugging
 
-Current and future outputs may include:
+## Connectors & Pinouts
 
-LED heartbeat
-passive buzzer
-digital face display
-speaker and voice
-head movement
-arm movement
-wheel motors
-body posture
-humanoid movement
-Power Architecture
-Phase A — Logic Tests
+Provide a final pinout table in an appendix: connector type, pin number, signal, voltage level, and direction.
 
-For touch, button and basic buzzer tests:
+## Testing & Validation
 
-USB → ESP8266
+- Unit tests for subsystems (sensors, actuators, comms)
+- Integration tests and acceptance criteria (battery run time, response latency)
+- Calibration procedures for manufacturing and field service
 
-The LED ring should initially run at low brightness.
+## Engineering Principle
 
-Do not power motors or servos from an ESP8266 GPIO or 3.3 V pin.
+Build in validated stages with clear goals, acceptance tests, documented wiring and code, safety limits, and a short development log.
 
-Phase B — One Servo Test
+## Revision History
 
-Possible first setup:
-
-USB → ESP8266
-
-separate 4×AA supply → one servo
-
-ESP8266 GND
-servo supply GND
-servo GND
-→ common ground
-
-The ESP8266 only provides the servo control signal.
-
-Phase C — Battery Prototype
-
-A later battery architecture may use a verified battery pack:
-
-battery pack
- ├── regulated branch → controller / sensors / display
- ├── high-current regulated branch → servos
- └── regulated branch → motors
-
-Important:
-
-verify battery configuration before use
-use the correct charger
-use battery protection / BMS when required
-use fuses and a main power switch later
-measure converter output before connecting electronics
-keep logic power isolated from servo and motor noise where necessary
-connect grounds correctly
-do not test unknown batteries without supervision
-
-The existing 18650 cells should not be used until their condition, configuration and protection are verified.
-
-Engineering Principle
-
-Do not attempt to build the final humanoid immediately.
-
-Build in validated stages:
-
-single reaction
-→ emotional states
-→ digital face
-→ AI connection
-→ standalone companion
-→ rolling movement
-→ humanoid upper body
-→ advanced walking
-
-Every stage should have:
-
-a clear goal
-an acceptance test
-documented wiring
-documented code
-safety limits
-a short development log
+- 1.0 — Initial formatted hardware architecture document
