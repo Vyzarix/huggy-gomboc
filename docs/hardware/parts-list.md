@@ -20,7 +20,7 @@ touch → LED heartbeat → buzzer sound → small servo movement
 
 ## LM2596 Buck Converter
 
-**Quantity:** 3 pieces
+**Quantity:** 2 pieces
 
 **Purpose:**
 - Reduce a higher battery voltage
@@ -88,7 +88,7 @@ touch → LED heartbeat → buzzer sound → small servo movement
 
 ## TTP223 Capacitive Touch Sensor
 
-**Quantity:** 10 pieces
+**Quantity:** 4 pieces
 
 **Purpose:**
 - Detect touch
@@ -108,7 +108,7 @@ touch → LED heartbeat → buzzer sound → small servo movement
 
 ## MG90S 180° Servo
 
-**Quantity:** 3 pieces
+**Quantity:** 2 pieces
 
 **Purpose:**
 - Learn servo position control
@@ -125,22 +125,19 @@ touch → LED heartbeat → buzzer sound → small servo movement
 
 ---
 
-## Planned Electronics Starter Kit
+## Already available:
 
-**Possible included parts:**
-- 400-point breadboard
-- Basic LEDs
-- Resistors
-- Push buttons
-- Capacitors
-- Jumper wires
-- Small electronic components
+- mini solderless breadboard
+- jumper wires
+- ESP8266 expansion board
 
-**Purpose:**
-- Practice basic circuits
-- Test digital inputs and outputs
-- Learn breadboard connections
-- Build temporary prototypes without soldering
+Parts may be borrowed from the school robotics lab when needed:
+
+- larger breadboard
+- resistors
+- capacitors
+- push buttons
+- additional jumper wires
 
 ---
 
