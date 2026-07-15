@@ -80,7 +80,7 @@ Improvements to implement:
 
 Possible touch zones: head, chest, left arm, right arm, back
 
-### V0.3 — Display Face Prototype
+## V0.3 — Display Face Prototype
 
 Goal: Add a digital face with animated eyes and expressions.
 
@@ -93,7 +93,7 @@ Hardware candidates:
 Animations to prototype: open/blink/closed eyes, happy/shy/look left/right, listening/thinking/sleepy states.
 Prototype animations on a computer before committing to a display.
 
-### V0.4 — Laptop-to-Robot Bridge
+## V0.4 — Laptop-to-Robot Bridge
 
 Goal: Connect the prototype to the AI running on a laptop.
 
@@ -110,7 +110,7 @@ Example command (JSON):
 
 The microcontroller executes a safe predefined reaction when receiving such commands.
 
-### V1 — Standalone Desktop Companion
+## V1 — Standalone Desktop Companion
 
 Goal: Build the first self-contained companion version.
 
@@ -125,7 +125,7 @@ Behaviors:
 
 Walking is not required for this version.
 
-### V2 — Rolling Companion Base
+## V2 — Rolling Companion Base
 
 Goal: Allow safe movement with wheels rather than bipedal walking.
 
@@ -136,14 +136,14 @@ Behaviors:
 
 Develop the rolling base before attempting humanoid walking.
 
-### V3 — Humanoid Upper Body
+## V3 — Humanoid Upper Body
 
 Goal: Create a more expressive humanoid upper body (moving head, shoulders, elbows, small hands, torso control, hugging motion).
 
 Before choosing servos:
 - Create a CAD model, determine arm lengths and mass, calculate required torque, define mechanical limits, and design safe movement sequences.
 
-### V4 — Advanced Humanoid Movement
+## V4 — Advanced Humanoid Movement
 
 Goal: Research standing, balance and walking (hip/knee/ankle joints, IMU, COM estimation, motion planning, ROS2, camera-based perception).
 This is a long-term research stage; Huggy can still be useful and expressive long before walking is completed.
