@@ -49,7 +49,7 @@ This was the first real software milestone of Huggy AI.
 
 The project moved from an idea into a working local prototype.
 
-## 2026-07-12 / 2026-07-13 – Personality and Response Style Refinement
+## 2026-07-12 / 13 – Personality and Response Style Refinement
 
 During July 12–13, 2026, I worked on refining Huggy AI's personality, emotional response style, and conversation behavior.
 
@@ -71,3 +71,5 @@ This phase helped Huggy become more emotionally accurate, more personal, and clo
 Current state:
 
 `Huggy AI V0.3.1 – Deep Comfort and Response Style Refinement`
+
+## 2026-07-14 / 15 - Doing modifications on repository and made it structured 
