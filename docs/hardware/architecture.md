@@ -40,7 +40,7 @@ We separate control into two layers:
 
 ## Development Stages
 
-### V0.1 — First Life Sign (Minimal physical reaction)
+## V0.1 — First Life Sign (Minimal physical reaction)
 
 Goal: Produce a stable, repeatable physical reaction.
 
@@ -66,7 +66,7 @@ Definition of Done:
 - Full reaction repeats and returns to IDLE
 - Wiring and program documented in the repository
 
-### V0.2 — Emotional State Machine
+## V0.2 — Emotional State Machine
 
 Goal: Implement multiple consistent physical states without AI.
 
