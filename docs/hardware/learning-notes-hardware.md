@@ -216,6 +216,32 @@ When the ESP8266 and servo use different power sources:
 
 The breadboard ground rail may be used as a temporary common connection point. The servo VCC must not be connected to the ESP8266 3.3 V pin.
 
+# Breadboard
+
+A breadboard is used to build temporary circuits without soldering.
+
+On the mini breadboard, each group of five holes on one side of the center gap is internally connected.
+
+Example:
+
+```text
+A10–E10 = one connected group
+F10–J10 = another connected group
+
+The two sides are separated by the center gap.
+
+The mini breadboard does not have dedicated power rails.
+
+It can be used for:
+
+sensor connections
+signal distribution
+temporary common ground
+resistors and small components
+
+High-current servo and motor power should not be routed through the mini breadboard in the final robot.
+```
+
 ### Power Domains
 
 A robot may contain separate power branches:
