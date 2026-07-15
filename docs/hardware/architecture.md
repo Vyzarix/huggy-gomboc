@@ -1,4 +1,4 @@
-# Huggy Gomboc — Hardware Architecture
+# Huggy Gomboc - Hardware Architecture
 
 ## Overview
 
