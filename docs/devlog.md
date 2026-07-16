@@ -72,4 +72,30 @@ Current state:
 
 `Huggy AI V0.3.1 – Deep Comfort and Response Style Refinement`
 
-## 2026-07-14 / 15 - Doing modifications on repository and made it structured 
+## 2026-07-14 / 15 - Doing modifications on repository and made it structured
+
+## 2026-07-16 – Memory Context and Response Style Tuning
+
+Today I continued improving the software side of Huggy AI.
+
+Main work:
+
+* expanded the private journal system used for long-form local context;
+* increased the amount of journal context Huggy can read from `journal.md`;
+* added a configurable journal context size in `main.py`;
+* refined Huggy's response behavior for deeper reflective conversations;
+* improved the distinction between short answers, technical help, and longer supportive responses;
+* continued separating private local files from public GitHub documentation;
+* planned a future public-safe version of the code and example personality files.
+
+Current state:
+
+`Huggy AI V0.3.2 – Journal Context Expansion and Response Style Tuning`
+
+Next software steps:
+
+* create a public-safe version of `main.py`;
+* create `personality.example.md`;
+* create example memory and journal files;
+* upload the cleaned Huggy AI code to GitHub;
+* improve memory handling beyond simple journal-tail loading.
